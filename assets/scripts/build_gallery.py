@@ -73,18 +73,18 @@ if __name__ == "__main__":
     gallery_info = build_gallery(include_core=True, include_contrib_experimental=True)
     with open("./expectation_library.json", "w") as outfile:
         json.dump(gallery_info, outfile)
-
-    import boto3
-
-    s3 = boto3.resource("s3")
-    gallery_info_object = s3.Object(
-        "superconductive-public", "static/gallery/expectation_library.json"
-    )
-    gallery_info_object.put(
-        Body=json.dumps(gallery_info).encode("utf-8"),
-        ContentEncoding="utf-8",
-        ContentType="application/json",
-    )
-
+    #
+    # import boto3
+    #
+    # s3 = boto3.resource("s3")
+    # gallery_info_object = s3.Object(
+    #     "superconductive-public", "static/gallery/expectation_library.json"
+    # )
+    # gallery_info_object.put(
+    #     Body=json.dumps(gallery_info).encode("utf-8"),
+    #     ContentEncoding="utf-8",
+    #     ContentType="application/json",
+    # )
+    #
     # trigger netlify build
-    trigger_gallery_build()
+    # trigger_gallery_build()
