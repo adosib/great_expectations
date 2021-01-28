@@ -76,6 +76,7 @@ stages:
 
           - task: S3Upload@1
             inputs:
+              regionName: 'us-east-2'
               awsCredentials: 'aws-ci-great-expectations'
               bucketName: 'superconductive-public'
               sourceFolder: '$(Build.SourcesDirectory)/assets/scripts'
